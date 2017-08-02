@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册</title>
+</head>
+<body>
+<form action="regist" method="POST">
+用户名：<input name="user.name" type="text">${nameErrMsg!}<br><br>
+密码：<input name="user.pwd" type="password">${pwdErrMsg!}<br><br>
+确认密码：<input name="reg.confirm" type="password">${confirmErrMsg!}<br><br>
+验证码：<input type="text" name="reg.yzm"><img src="/yzm"><br><br>${yzmErrMsg!}
+<button type="submit">注册</button>
+</form>
+</body>
+</html>

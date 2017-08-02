@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="/static/bootstrap3.3.7/jquery.min.js"></script>
+<link href="/static/bootstrap3.3.7/bootstrap.min.css" rel="stylesheet">
+<script src="/static/bootstrap3.3.7/bootstrap.min.js"></script>
+<title>博客_列表</title>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<ul class="nav nav-tabs">
+ 	<li role="presentation" style="margin-left:320px"><a href="#">Home</a></li>
+ 	<li role="presentation" class="active"><a href="/blog">Blog</a></li>
+  	<li role="presentation"><a href="#">About</a></li>
+</ul>
+
+<!-- 首页主体 -->
+<div class="main">
+	<!-- 目录 -->
+	<div class="catalog">Catalog</div>
+	<!-- 文章列表 -->
+	<div class="details">
+		<#list blogPage.getList() as x>
+		<div class="detail_art">
+			<a href="blog/article/${x.id}" target="_blank">
+				<span>${x.title}</span>
+			</a>
+			<span class="date" style="float: right">${x.create_date}</span>
+		</div>
+		</#list>
+	</div>
+<!-- 分页文章较少暂时不用 -->
+<!-- 
+<#include "/common/_paginate.html" />
+    <@paginate currentPage=blogPage.pageNumber totalPage=blogPage.totalPage actionUrl="/blog/" />
+ -->
+</div>
+<!-- 页脚 -->
+<div class="footer">
+	<div class="copyright">© 2016-2018 xuetao.site — All Rights Reserved. 蜀ICP备17021163号 </div>
+</div>
+
+</body>
+
+<style>
+.main{
+	width:50%;
+	min-width:680px;
+	margin:20px auto;
+	min-height: 545px;
+}
+.main a{
+	color:#58595B;
+}
+.footer{
+	height:40px;
+	background-color: #F5EFEF;
+	text-align:center;
+	border:1px solid #E5E5E5;
+}
+.copyright{
+	line-height: 40px;
+}
+.catalog{
+	border-bottom: 1px solid #000;
+	font-size:18px;
+	font-weight: bold;
+	font-family: Gungsuh;
+}
+.detail_art{
+	font-family:黑体;
+	font-size:16px;
+	margin:10px 0;
+}
+.detail_art a:link{
+	color:#170000; 
+}
+</style>
+
+</html>

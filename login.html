@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>登录</title>
+</head>
+<body>
+<div>
+	<form action="ulogin" method="post">
+		<div>
+			<label>用户名：</label>
+			<div>
+				<input type="text" name="user.name" lay-verify="uname" required placeholder="请输入用户名"
+					autocomplete="off">${UnameErrMsg?if_exists}
+			</div>
+		</div>
+		<div>
+			<label>密码：</label>
+			<div>
+				<input type="password" name="user.pwd" lay-verify="" required placeholder="请输入密码" 
+					autocomplete="off">${PwdErrMsg?if_exists}
+			</div>
+		</div>
+		<div>
+			<label>验证码：</label>
+			<div>
+				<input type="text" name="yzm" lay-verify="" required placeholder="请输入验证码"
+					autocomplete="off">${YzmErrMsg?if_exists}<br>
+				<a href="/login"><img alt="验证码" src="/yzm"></a>
+			</div>
+		</div>
+		<div>
+			<button type="submit">登录</button>
+		</div>
+	</form>
+</div>
+</body>
+
+</html>
